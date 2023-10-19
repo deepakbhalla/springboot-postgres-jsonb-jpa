@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "66194700-52bd-4a64-bd07-73aa925a90ff",
+		"name": "Bank-Microservice-SpringBoot-Jsonb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountHolderName\": \"April\",\r\n  \"accountBranch\": \"City 2, India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/my-application/account/85691/balance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"my-application",
+						"account",
+						"85691",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountHolderName\": \"Deepak Bhalla\",\r\n  \"accountBranch\": \"India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/my-application/account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"my-application",
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Account",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountHolderName\": \"April\",\r\n  \"accountBranch\": \"City 2, India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/my-application/account?accountNumber=85691&newBranch=New Branch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"my-application",
+						"account"
+					],
+					"query": [
+						{
+							"key": "accountNumber",
+							"value": "85691"
+						},
+						{
+							"key": "newBranch",
+							"value": "New Branch"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Account",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountHolderName\": \"April\",\r\n  \"accountBranch\": \"City 2, India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/my-application/account?accountNumber=43974",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"my-application",
+						"account"
+					],
+					"query": [
+						{
+							"key": "accountNumber",
+							"value": "43974"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit Amount",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountHolderName\": \"April\",\r\n  \"accountBranch\": \"City 2, India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/my-application/transaction/deposit?accountNumber=85691&amount=500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"my-application",
+						"transaction",
+						"deposit"
+					],
+					"query": [
+						{
+							"key": "accountNumber",
+							"value": "85691"
+						},
+						{
+							"key": "amount",
+							"value": "500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withraw Amount",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountHolderName\": \"April\",\r\n  \"accountBranch\": \"City 2, India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9091/my-application/transaction/withdraw?accountNumber=85691&amount=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"my-application",
+						"transaction",
+						"withdraw"
+					],
+					"query": [
+						{
+							"key": "accountNumber",
+							"value": "85691"
+						},
+						{
+							"key": "amount",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

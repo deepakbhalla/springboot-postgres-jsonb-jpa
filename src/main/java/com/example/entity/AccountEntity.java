@@ -1,13 +1,17 @@
 package com.example.entity;
 
+import com.example.model.Transaction;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Builder
@@ -15,7 +19,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "account")
-public class account {
+public class AccountEntity {
 
     @Id
     @SequenceGenerator(name = "account_id_seq", sequenceName = "account_id_seq", allocationSize = 1)
@@ -24,12 +28,13 @@ public class account {
     private Long id;
 
     @Column(name = "acc_no")
-    private String accountName;
+    private Integer accNo;
 
     @Column(name = "holder_name")
     private String holderName;
 
     @Column(name = "start_date")
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private Date startDate;
 
     @Column(name = "branch")
@@ -37,6 +42,10 @@ public class account {
 
     @Column(name = "balance")
     private Long balance;
+
+    @JdbcTypeCode(SqlTypes.JSON)
+    @Column(name = "transactions", columnDefinition = "jsonb")
+    private List<Transaction> transactions;
 
     @Column(name = "created_by")
     private String createdBy;

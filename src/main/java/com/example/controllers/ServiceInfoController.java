@@ -1,5 +1,6 @@
 package com.example.controllers;
 
+import com.example.constant.AccountConstants;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,6 @@ public class ServiceInfoController {
 
     @GetMapping
     public ResponseEntity<String> info() {
-        return new ResponseEntity<>("service is up and running", HttpStatus.OK);
+        return new ResponseEntity<>(AccountConstants.SERVICE_IS_RUNNING.getMessage(), HttpStatus.OK);
     }
 }
