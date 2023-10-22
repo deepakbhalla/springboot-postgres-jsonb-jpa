@@ -1,6 +1,8 @@
 # springboot-postgres-jsonb-jpa
 Spring boot application to demonstrate the JSONB data type used in PostgreSQL database using Springboot JPA implementation.
 
+### JSON Data Types
+
 JSON data types are for storing JSON (JavaScript Object Notation) data. Such data can also be stored as text, but the 
 JSON data types have the advantage of enforcing that each stored value is valid according to the JSON rules. There are 
 also assorted JSON-specific functions and operators available for data stored in these data types.
@@ -43,11 +45,30 @@ Let's look at an example:
 In summary,
 
 1. JSON stores white space, and that is why we can see spaces when key "a" is stored, while JSONB does not.
-2. JSON stores all the values of a key. This is the reason you can see multiple values (2 and 1) against the key "a" , while JSONB only "stores" the last value.
+2. JSON stores all the values of a key. This is the reason you can see multiple values (2 and 1) against the key "a", while JSONB only "stores" the last value.
 3. JSON maintains the order in which elements are inserted, while JSONB maintains the "sorted" order.
 4. JSONB objects are stored as a decompressed binary as opposed to "raw data" in JSON, where no reparsing of data is required during retrieval.
 5. JSONB also supports indexing, which can be a significant advantage.
 
+### JSON Functions and Operators
+
+This section describes:
+
+- functions and operators for processing and creating JSON data
+- the SQL/JSON path language
+
+To provide native support for JSON data types within the SQL environment, PostgreSQL implements the SQL/JSON data model. 
+This model comprises sequences of items. Each item can hold SQL scalar values, with an additional SQL/JSON null value, 
+and composite data structures that use JSON arrays and objects. The model is a formalization of the implied data model 
+in the JSON specification.
+
+SQL/JSON allows you to handle JSON data alongside regular SQL data, with transaction support, including:
+
+- Uploading JSON data into the database and storing it in regular SQL columns as character or binary strings.
+- Generating JSON objects and arrays from relational data.
+- Querying JSON data using SQL/JSON query functions and SQL/JSON path language expressions.
+
 References:
 
-https://www.postgresql.org/docs/current/datatype-json.html
+- https://www.postgresql.org/docs/current/datatype-json.html
+- https://www.postgresql.org/docs/current/functions-json.html
