@@ -1,5 +1,5 @@
 # springboot-postgres-jsonb-jpa
-Spring boot application to demonstrate the JSONB data type used in PostgreSQL database using Springboot JPA implementation.
+Application to demonstrate the JSONB data type used in PostgreSQL database using Springboot JPA implementation.
 
 ### JSON Data Types
 
