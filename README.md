@@ -68,6 +68,10 @@ SQL/JSON allows you to handle JSON data alongside regular SQL data, with transac
 - Generating JSON objects and arrays from relational data.
 - Querying JSON data using SQL/JSON query functions and SQL/JSON path language expressions.
 
+### OpenAPI Specification
+
+![img.png](screenshots/21_openapi_swagger_specifications.png)
+
 References:
 
 - https://www.postgresql.org/docs/current/datatype-json.html
