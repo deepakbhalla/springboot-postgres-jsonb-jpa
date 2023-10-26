@@ -70,6 +70,8 @@ SQL/JSON allows you to handle JSON data alongside regular SQL data, with transac
 
 ### OpenAPI Specification
 
+http://localhost:9091/my-application/swagger-ui/index.html
+
 ![img.png](screenshots/21_openapi_swagger_specifications.png)
 
 ### Disable OpenAPI Swagger for Production Environment
