@@ -54,7 +54,8 @@ public class AccountManagementController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Account createAccount(
             @RequestBody(description = "Request body takes only account holder name 'accountHolderName' and account branch 'accountBranch' to create a new account", required = true,
-                content = @Content(schema = @Schema(implementation = Account.class))) Account account) throws BadRequestException {
+                content = @Content(schema = @Schema(implementation = Account.class))) 
+				@org.springframework.web.bind.annotation.RequestBody Account account) throws BadRequestException {
         return this.accountService.createAccount(account);
     }
 
