@@ -72,6 +72,20 @@ SQL/JSON allows you to handle JSON data alongside regular SQL data, with transac
 
 ![img.png](screenshots/21_openapi_swagger_specifications.png)
 
+### Disable OpenAPI Swagger for Production Environment
+
+We can disable OpenAPI swagger for any environment based upon profiles. We can supply a VM argument 
+'-Dspring.profiles.active=<environment name>' to the application configurations.
+Using spring profile annotation @Profile("prod"), we can control the display of swagger.
+
+- VM Argument
+
+![img.png](screenshots/22_vm_argument_spring_active_profile.png)
+
+If the value of spring profile is 'prod', then swagger won't be available. Please refer the below screenshot:
+
+![img.png](screenshots/23_swagger_not_available.png)
+
 References:
 
 - https://www.postgresql.org/docs/current/datatype-json.html
